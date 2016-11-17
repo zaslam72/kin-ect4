@@ -45,4 +45,17 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rspec-rails'
+gem 'awesome_print'
+# research the conjuction of these 2 gems
+gem 'better_errors'
+gem 'binding_of_caller'
+# for heroku betterment
+gem 'rails_12factor', group: :production
+gem 'hirb'
+gem 'bcrypt', '~> 3.1.7'
+gem 'pry-rails'
+gem 'rb-readline'
+gem 'capybara'
+gem 'faker'
