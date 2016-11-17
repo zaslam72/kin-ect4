@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'friends/show'
+
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :categories, only: [:index, :show] do

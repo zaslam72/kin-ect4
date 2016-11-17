@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @games = current_user.games
+    @friends = current_user.friends
   end
 
   def edit
@@ -33,3 +35,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
+
+
+
