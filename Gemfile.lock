@@ -227,7 +227,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails_12factor
   rb-readline
-  rspec-rails
+  rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -236,4 +236,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.3
+   1.13.6
