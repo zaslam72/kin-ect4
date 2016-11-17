@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   # games/results
+
   resources :games, only: [:index, :show] do
     resources :comments
     resources :votes, except: [:index, :destroy]
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   root 'games#index'
+  post "/games" =>'games#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
