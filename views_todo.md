@@ -1,10 +1,9 @@
 header
 ======
 
--	[ ] login
--	[ ] signup
--	[ ] all games link
--	[ ] friends link
+-	[x] login
+-	[x] signup
+-	[x] all games link
 
 'games#index'
 =============
