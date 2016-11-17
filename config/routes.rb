@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   # games/results
+
   resources :games, only: [:index, :show] do
     resources :comments
     resources :votes, except: [:index, :destroy]
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   root 'games#index'
+  post "/games" =>'games#search'
 
   root to: 'gif#cool'
 
