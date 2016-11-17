@@ -1,8 +1,22 @@
 <h2>Welcome to <%= @game.title %></h2>
 <p>
-  <label>game description:</label>
+  <b><label>Game Description:</label></b>
   <%= @game.body %>
 </p>
 
+<b><label>Game Comments:</label></b>
 
-<label>comments:</label>
+<%= render partial: "shared/errors" %>
+
+<% if @game.comments.length > 0 %>
+<%= render partial: "games/comment", collection: @game.comments %>
+<% end %>
+
+<%= form_for([@game, Comment.new]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, size: "80x5" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
