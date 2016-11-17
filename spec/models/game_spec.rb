@@ -1,5 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe Game, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Game, type: :model do
+  context "on a new game" do
+    it "is not valid without a title" do
+      game = Game.new title: "", body: "A Strategy game", num_players: 2, category_id: 154
+      expect(game).not_to be_valid
+    end
+
+    it "is not valid without a body" do
+      game = Game.new title: "Chess", body: "", num_players: 2, category_id: 154
+      expect(game).not_to be_valid
+    end
+
+    it "is not valid without a category" do
+      game = Game.new title: "Chess", body: "", num_players: 2, category_id: nil
+      expect(game).not_to be_valid
+    end
+  end
 end
