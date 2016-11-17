@@ -1,22 +1,17 @@
 class GamesController < ApplicationController
+
   def index
-  end
-
-  def new
-  end
-
-  def create
+    @categories = Category.all
+    @games = Game.all
   end
 
   def show
+    @game = Game.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def search
+    @categories = Category.all
+    @games = Game.where(category_id: params[:category_id])
+    render :index
   end
 end
