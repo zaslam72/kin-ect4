@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authorize, except: [:index]
 
   def index
     @categories = Category.all
