@@ -9,8 +9,8 @@ header
 'games#index'
 =============
 
--	[ ] all games partial
--	[ ] search games
+-	[x] all games partial
+-	[x] search games
 
 'users#new'
 ===========
