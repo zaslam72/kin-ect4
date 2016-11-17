@@ -14,12 +14,12 @@ header
 'users#new'
 ===========
 
--	[ ] new user form
+-	[x] new user form
 
 'sessions/new'
 ==============
 
--	[ ] login form
+-	[x] login form
 
 'users#show'
 ============
