@@ -78,6 +78,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# WHY YOU NO GET ON TO GITHUB YOU NOOB
+
+
 production:
   <<: *default
   database: kin-ect4_production
