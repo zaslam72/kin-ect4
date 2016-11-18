@@ -10,8 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @subscription = Subscrip
-    current_user.games <<
+  
   end
 
   def show
