@@ -33,12 +33,12 @@ header
 'games#show'
 ============
 
--	[ ] game info description and image
+-	[x] game info description and image
 -	[x] games/users partial
 -	[x] comments partial
 	-	[x] comment display
 	-	[x] comment form
--	[ ] button_to add games -> redirect to 'user#show'
+-	[x] button_to add games -> redirect to 'user#show'
 
 'categories#show'
 =================
