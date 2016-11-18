@@ -1,6 +1,7 @@
 <li>
-  <%= link_to game.title, game_path(game) %>
-  <%= button_to "+subscribe", game_subscriptions_path(game, :method => :post)%>
-  <%= pluralize(game.votes.count, "vote") %>
   <%= button_to '+1', upvote_game_path(game), method: :post %>
+  <%= pluralize(game.votes.where(upvote: true).count - game.votes.where(upvote: false).count, "vote") %>
+  <%= button_to '-1', downvote_game_path(game), method: :post %>
+  <%= link_to 'Edit', edit_game_path(game) %>
+  <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
 </li>
