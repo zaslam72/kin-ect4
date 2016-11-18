@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @games = @user.games
+    @friends = @user.friends
+
   end
 
   def edit
@@ -33,3 +37,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
+
+
+

@@ -1,4 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- <h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p> -->
+<h2><%= @user.name.capitalize %>, here are your Games!</h2>
+<ul>
+	<%= render partial: 'games/game', collection: @games %>
+</ul>
 
-<h3>Welcome User!!!</h3>
+<h2>Friends!</h2>
+<ul>
+	<%= render partial: 'friend', collection: @friends %>
+</ul>
+
+<%= render 'add_games_button' %>
