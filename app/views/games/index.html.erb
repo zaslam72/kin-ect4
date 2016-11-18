@@ -35,8 +35,10 @@
 
 <h2>Welcome to Kinect4</h2>
 <ul class='game-list'>
+
+<!-- <ul> -->
   <%= render partial: 'game', collection: @games %>
-</ul>
+<!-- </ul> -->
 
 <%= form_for "games#search" do |f| %>
   <select name="category_id">

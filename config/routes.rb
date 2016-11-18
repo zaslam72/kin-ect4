@@ -24,7 +24,9 @@ Rails.application.routes.draw do
       resources :votes, except: [:index, :destroy]
     end
     resources :votes, except: [:index, :destroy]
-    resources :games, except: [:edit, :update]
+    resources :games, except: [:edit, :update] do
+      resources :subscriptions, only: [:new, :create, :destroy]
+    end
     resources :friends, except: [:edit, :update]
   end
 

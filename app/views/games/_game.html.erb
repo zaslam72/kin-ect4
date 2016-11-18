@@ -1,7 +1,28 @@
-<li>
-  <%= button_to '+1', upvote_game_path(game), method: :post %>
-  <%= pluralize(game.votes.where(upvote: true).count - game.votes.where(upvote: false).count, "vote") %>
-  <%= button_to '-1', downvote_game_path(game), method: :post %>
-  <%= link_to 'Edit', edit_game_path(game) %>
-  <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
-</li>
+<!-- <li> -->
+  <%= link_to game.title, game_path(game) %><br>
+
+  <% if current_user.games.include?(game) %>
+    <p>
+      <%= button_to "+unsubscribe", user_game_subscription_path(current_user, game, game.subscriptions.where(game_id: game.id, user_id: current_user.id)), method: 'delete', action: :destroy %>
+    </p>
+  <% else %>
+    <%# @game = current_user.games.find(game.id) if current_user.games.find(game.id) %>
+    <p>
+      <%= button_to "+subscribe", user_game_subscriptions_path(current_user, game, method: :post) %>
+    </p>
+  <% end %>
+<br>
+  <!-- <%# if game.votes.where(:upvote => false).pluck(:user_id).include?(current_user.id) %><br> -->
+  <% if !game.votes.pluck(:user_id).include?(current_user.id) %><br>
+    <%= button_to '+1', upvote_game_path(game), method: :post %><br>
+  <% end %>
+    <%= pluralize(game.votes.where(upvote: true).count - game.votes.where(upvote: false).count, "vote") %><br>
+  <% if !game.votes.pluck(:user_id).include?(current_user.id) %><br>
+    <%= button_to '-1', downvote_game_path(game), method: :post %><br>
+  <% end %>
+<hr>
+  <!-- <%#= link_to 'Edit', edit_game_path(game) %><br> -->
+  <!-- <%#= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %><br> -->
+<!-- </li> -->
+
+<!-- 'game#index' -->
