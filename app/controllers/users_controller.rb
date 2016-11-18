@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @games = current_user.games
-    @friends = current_user.friends
+    @user = User.find(params[:id])
+    @games = @user.games
+    @friends = @user.friends
+
   end
 
   def edit
