@@ -34,6 +34,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :comments do
+    member do
+      post 'upvote'
+    end
+  end
+
   root 'games#index'
   post "/games" =>'games#search'
 
