@@ -1,28 +1,26 @@
 <br>
 <div class="container">
-  <h1>Welcome to Kinect4</h1>
-</div>
-<br>
-<ul class='game-list'>
 
-  <!-- <ul> -->
-  <div class="card-deck-wrapper">
-    <div class="card-deck col-sm-4">
-      <div class="card">
-        <!-- <%# @games.each_slice(3) do |games| %> -->
-        <%= render partial: 'game', collection: @games %>
-      </div>
-    </div>
+
+  <div class="header">
+    <h1>Welcome to Kinect4</h1>
   </div>
+  <br>
+
+  <ul class='game-list'>
+
+    <!-- <ul> -->
+
+    <%= render partial: 'game', collection: @games %>
 
 
-  <!-- </ul> -->
+    <!-- </ul> -->
 
-  <%= form_for "games#search" do |f| %>
-  <select name="category_id">
-    <%= @categories.each do |category| %>
-    <option value="<%= category.id %>"><%= category.name %></option>
+    <%= form_for "games#search" do |f| %>
+    <select name="category_id">
+      <%= @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+      <%= f.submit value: "search"%>
+    </select>
     <% end %>
-    <%= f.submit value: "search"%>
-  </select>
-  <% end %>
