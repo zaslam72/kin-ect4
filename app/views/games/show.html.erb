@@ -1,3 +1,5 @@
+<!-- add players of each game here and restrict view if friend or not showing links -->
+
 <h2>Welcome to <%= @game.title %></h2>
 <p>
   <b><label>Game Description:</label></b>
@@ -20,3 +22,10 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- players partial here -->
+<p>
+  players of this game
+</p>
+
+<%= render partial: "games/player", collection: @players %>

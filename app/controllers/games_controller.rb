@@ -1,13 +1,17 @@
 class GamesController < ApplicationController
   before_action :authorize, except: [:index]
+  before_action :current_user
 
   def index
+    # @current_user = User.first
+
     @categories = Category.all
     @games = Game.all
   end
 
   def show
     @game = Game.find(params[:id])
+    @players = @game.users
   end
 
   def search
