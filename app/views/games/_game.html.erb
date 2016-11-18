@@ -1,3 +1,4 @@
 <li>
   <%= link_to game.title, game_path(game) %>
+  <%= button_to "+add", game_path(current_user), method: 'POST' %>
 </li>
