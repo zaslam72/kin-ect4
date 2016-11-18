@@ -5,4 +5,5 @@ class FriendsController < ApplicationController
   	@games = @friend.games
   end 
 
+  
 end
