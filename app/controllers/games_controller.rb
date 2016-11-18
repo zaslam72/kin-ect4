@@ -6,7 +6,7 @@ class GamesController < ApplicationController
     # @current_user = User.first
 
     @categories = Category.all
-    @games = Game.all
+    @games = Game.all[0..20]
   end
 
   def show

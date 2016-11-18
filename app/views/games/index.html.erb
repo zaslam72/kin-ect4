@@ -1,50 +1,28 @@
-
-<article>
-  <h1>This is my title</h1>
-  <h2>This is a subheader</h2>
-
-  <p>
-    This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  </p>
-
-  <div>
-    <p class='half-size'>
-      This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class='half-size'>
-      This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-  </div>
-
-  <div>
-    <p class='four-col'>
-      This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class='four-col'>
-      This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class='four-col'>
-      This is a long running paragraph Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-  </div>
-</article>
-
-
-<h2>Welcome to Kinect4</h2>
+<br>
+<div class="container">
+  <h1>Welcome to Kinect4</h1>
+</div>
+<br>
 <ul class='game-list'>
 
-<!-- <ul> -->
-  <%= render partial: 'game', collection: @games %>
-<!-- </ul> -->
+  <!-- <ul> -->
+  <div class="card-deck-wrapper">
+    <div class="card-deck col-sm-4">
+      <div class="card">
+        <!-- <%# @games.each_slice(3) do |games| %> -->
+        <%= render partial: 'game', collection: @games %>
+      </div>
+    </div>
+  </div>
 
-<%= form_for "games#search" do |f| %>
+
+  <!-- </ul> -->
+
+  <%= form_for "games#search" do |f| %>
   <select name="category_id">
-     <%= @categories.each do |category| %>
-       <option value="<%= category.id %>"><%= category.name %></option>
-     <% end %>
-     <%= f.submit value: "search"%>
+    <%= @categories.each do |category| %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+    <%= f.submit value: "search"%>
   </select>
-<% end %>
+  <% end %>
