@@ -46,4 +46,10 @@ class CommentsController < ApplicationController
     @comment.votes.create(user_id: current_user.id, upvote: true)
     redirect_to(game_path(@comment.game_id))
   end
+
+  def downvote
+    @comment = Comment.find(params[:id])
+    @comment.votes.create(user_id: current_user.id, upvote: false)
+    redirect_to(game_path(@comment.game_id))
+  end
 end

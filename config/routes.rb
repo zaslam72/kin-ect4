@@ -40,6 +40,18 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :games do
+    member do
+      post 'downvote'
+    end
+  end
+
+  resources :comments do
+    member do
+      post 'downvote'
+    end
+  end
+
   root 'games#index'
   post "/games" =>'games#search'
 
