@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'friends/show'
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -45,6 +44,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  post '/users/:id/friendship' => 'users#friendship'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

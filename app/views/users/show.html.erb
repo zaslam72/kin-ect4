@@ -1,13 +1,35 @@
 <!-- <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p> -->
-<h2><%= @user.name.capitalize %>, here are your Games!</h2>
-<ul>
-	<%= render partial: 'games/game', collection: @games %>
-</ul>
+	<p>Find me in app/views/users/show.html.erb</p> -->
 
-<h2>Friends!</h2>
-<ul>
-	<%= render partial: 'friend', collection: @friends %>
-</ul>
+	<% if current_user == @user %>
+	<h2>Welcome <%= @user.name.capitalize %>, here are your Games!</h2>
+	<% else %>
+	<h2><%= @user.name.capitalize %>'s Profile Page!</h2>
+	<% end %>
 
-<%= render 'add_games_button' %>
+	<%if current_user.friends.include?(@user) %>
+	<!-- Unfriend Button -->
+
+	<%= button_to "Unfriend", { action: "destroy", id: @user.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+
+	<% else %>
+	<!-- Add Friend Button -->
+	<% if current_user.id == @user.id %>
+	<% else %>
+	<%= button_to "Add Friend", action: "friendship" %>
+	<% end %>
+
+	<% end %>
+
+	<ul>
+		<%= render partial: 'games/game', collection: @games %>
+	</ul>
+
+	<h2>Friends!</h2>
+	<ul>
+		<%= render partial: 'friend', collection: @friends %>
+	</ul>
+
+	<% if current_user == @user %>
+	<%= render 'add_games_button' %>
+	<% end %>
