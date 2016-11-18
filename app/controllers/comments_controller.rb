@@ -10,7 +10,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-  
+    @game = Game.find(params[:game_id])
+    @comment = @game.comments.new(body: params[:comment][:body], user_id: current_user.id)
+    if @comment.save
+      redirect_to game_path(@game)
+    else
+      @errors = @comment.errors.full_messages
+      render "games/show"
+    end
   end
 
   def show
