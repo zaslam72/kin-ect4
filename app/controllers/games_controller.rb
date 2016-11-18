@@ -21,4 +21,10 @@ class GamesController < ApplicationController
     @game.votes.create(user_id: current_user.id, upvote: true)
     redirect_to(games_path)
   end
+
+  def downvote
+    @game = Game.find(params[:id])
+    @game.votes.create(user_id: current_user.id, upvote: false)
+    redirect_to(games_path)
+  end
 end
