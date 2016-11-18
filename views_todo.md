@@ -24,9 +24,9 @@ header
 'users#show'
 ============
 
--	[ ] all games partial w/comments partial showing
--	[ ] all friends partial
--	[ ] button_to root
+-	[x] all games partial w/comments partial showing
+-	[x] all friends partial
+-	[x] button_to root
 
 **if not friends restrict view of games and friends**
 
@@ -34,17 +34,17 @@ header
 ============
 
 -	[ ] game info description and image
--	[ ] games/users partial
--	[ ] comments partial
-	-	[ ] comment display
-	-	[ ] comment form
+-	[x] games/users partial
+-	[x] comments partial
+	-	[x] comment display
+	-	[x] comment form
 -	[ ] button_to add games -> redirect to 'user#show'
 
 'categories#show'
 =================
 
--	[ ] all games partial
--	[ ] search games
+-	[x] all games partial
+-	[x] search games
 
 'users#show'
 ============
