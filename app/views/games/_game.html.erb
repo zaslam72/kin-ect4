@@ -1,3 +1,6 @@
 <li>
   <%= link_to game.title, game_path(game) %>
+  <%= button_to "+subscribe", game_subscriptions_path(game, :method => :post)%>
+  <%= pluralize(game.votes.count, "vote") %>
+  <%= button_to '+1', upvote_game_path(game), method: :post %>
 </li>
