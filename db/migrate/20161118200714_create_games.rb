@@ -3,7 +3,11 @@ class CreateGames < ActiveRecord::Migration[5.0]
     create_table :games do |t|
       t.string :title
       t.string :body
-      t.integer :num_players
+      t.string :image_url
+      t.string :thumbnail_url
+      t.integer :min_players
+      t.string :max_players
+      t.integer :playing_time
       t.integer :category_id
 
       t.timestamps
