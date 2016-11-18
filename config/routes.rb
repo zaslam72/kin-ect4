@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'friends/show'
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -11,24 +10,44 @@ Rails.application.routes.draw do
   # games/results
 
   resources :games, only: [:index, :show] do
-    resources :comments
+    resources :comments do
+      resources :votes, except: [:index, :destroy]
+    end
     resources :votes, except: [:index, :destroy]
+    resources :subscriptions, only: [:new, :create, :destroy]
     # need to update votes
     resources :users
   end
 
   resources :users, except: [:index] do
-    resources :comments
+    resources :comments do
+      resources :votes, except: [:index, :destroy]
+    end
     resources :votes, except: [:index, :destroy]
     resources :games, except: [:edit, :update]
     resources :friends, except: [:edit, :update]
   end
 
+  resources :games do
+    member do
+      post 'upvote'
+    end
+  end
+
+  resources :comments do
+    member do
+      post 'upvote'
+    end
+  end
+
   root 'games#index'
   post "/games" =>'games#search'
 
+<<<<<<< HEAD
   # root to: 'gif#cool'
 
+=======
+>>>>>>> 74d61c7d401319302d612126dac14ffead33a7ce
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -36,6 +55,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  post '/users/:id/friendship' => 'users#friendship'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

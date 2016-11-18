@@ -1,0 +1,8 @@
+<%= form_for([@game, @comment]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, size: "80x5" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

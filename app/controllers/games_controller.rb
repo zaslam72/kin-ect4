@@ -16,12 +16,9 @@ class GamesController < ApplicationController
     render :index
   end
 
-  def new
-    @game = Game.new
-  end
-
-  def create
-    @subscription = Subscription.create(user_id: current_user.id, game_id: params[:id])
-    redirect_to game_path
+  def upvote
+    @game = Game.find(params[:id])
+    @game.votes.create(user_id: current_user.id, upvote: true)
+    redirect_to(games_path)
   end
 end
