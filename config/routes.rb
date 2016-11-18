@@ -11,23 +11,32 @@ Rails.application.routes.draw do
   # games/results
 
   resources :games, only: [:index, :show] do
-    resources :comments
+    resources :comments do
+      resources :votes, except: [:index, :destroy]
+    end
     resources :votes, except: [:index, :destroy]
+    resources :subscriptions, only: [:new, :create, :destroy]
     # need to update votes
     resources :users
   end
 
   resources :users, except: [:index] do
-    resources :comments
+    resources :comments do
+      resources :votes, except: [:index, :destroy]
+    end
     resources :votes, except: [:index, :destroy]
     resources :games, except: [:edit, :update]
     resources :friends, except: [:edit, :update]
   end
 
+  resources :games do
+    member do
+      post 'upvote'
+    end
+  end
+
   root 'games#index'
   post "/games" =>'games#search'
-
-  root to: 'gif#cool'
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
