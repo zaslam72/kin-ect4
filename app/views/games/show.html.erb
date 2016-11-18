@@ -1,9 +1,18 @@
 <!-- add players of each game here and restrict view if friend or not showing links -->
+<div class="container">
+
 
 <h2>Welcome to <%= @game.title %></h2>
-<p>
-  <b><label>Game Description:</label></b>
+<img class="large-pic" src=<%= @game.image_url %>>
+
+<p><b><label>Game Description:</label></b>
   <%= @game.body %>
+  <p><b><label>Min Players:</label></b>
+  <%= @game.min_players %></p>
+  <p><b><label>Max Players:</label></b>
+  <%= @game.max_players %></p>
+  <p><b><label>Playing Time:</label></b>
+  <%= @game.playing_time %></p>
 </p>
 
 <b><label>Game Comments:</label></b>
@@ -24,8 +33,12 @@
 <% end %>
 
 <!-- players partial here -->
-<p>
-  players of this game
-</p>
+<br>
+
+<h3>
+  Other Players:
+</h3>
 
 <%= render partial: "games/player", collection: @players %>
+</div>
+<br>

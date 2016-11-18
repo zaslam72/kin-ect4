@@ -1,5 +1,9 @@
-<% if current_user %>
-<%= link_to "Home", games_path %> | <%= link_to "Profile Page", user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-<%= link_to "Home", games_path %> | <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
+<nav class="navbar navbar-light bg-faded">
+  <div class="nav navbar-nav">
+  <% if current_user %>
+  <%= link_to "Home", games_path, {class: "nav-item nav-link"} %>  <%= link_to "Profile Page", user_path(current_user), {class: "nav-item nav-link"} %>  <%= link_to "Logout", '/logout', {class: "nav-item nav-link"} %>
+  <% else %>
+  <%= link_to "Home", games_path, {class: "nav-item nav-link"} %>  <%= link_to 'Login', '/login' , {class: "nav-item nav-link"}%>  <%= link_to 'Signup', '/signup', {class: "nav-item nav-link"} %>
+  <% end %>
+</div>
+</nav>
