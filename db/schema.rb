@@ -45,13 +45,6 @@ ActiveRecord::Schema.define(version: 20161117013017) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "games_users", force: :cascade do |t|
-    t.integer  "game_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "game_id"
