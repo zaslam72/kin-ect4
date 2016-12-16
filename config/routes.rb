@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   end
 
   root 'games#index'
-  post "/games" =>'games#search'
+  get "/search" =>'games#search'
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'

@@ -1,9 +1,7 @@
-<nav class="navbar navbar-light bg-faded">
-  <div class="nav navbar-nav">
+
   <% if current_user %>
-  <%= link_to "Home", games_path, {class: "nav-item nav-link"} %>  <%= link_to "Profile Page", user_path(current_user), {class: "nav-item nav-link"} %>  <%= link_to "Logout", '/logout', {class: "nav-item nav-link"} %>
+  <%= link_to "Home", games_path, class: "link-class" %>  |  <%= link_to "Profile Page", user_path(current_user), class: "link-class" %>  |  <%= link_to "Logout", '/logout', class: "link-class" %>
   <% else %>
-  <%= link_to "Home", games_path, {class: "nav-item nav-link"} %>  <%= link_to 'Login', '/login' , {class: "nav-item nav-link"}%>  <%= link_to 'Signup', '/signup', {class: "nav-item nav-link"} %>
+  <%= link_to "Home", games_path, class: "link-class" %>  |  <%= link_to 'Login', '/login', class: "link-class" %>  |  <%= link_to 'Signup', '/signup', class: "link-class" %>
   <% end %>
-</div>
-</nav>
+

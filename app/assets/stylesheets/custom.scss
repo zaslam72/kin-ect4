@@ -1,0 +1,85 @@
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+.center {
+    margin: auto;
+    width: 35%;
+    padding: 10px;
+}
+
+.large-pic {
+  height: 30%; 
+  width: 30%;
+  overflow: "hidden";
+}
+
+
+.container {
+  color: #666666;
+}
+
+
+.link-class {
+  color: #666666;
+}
+
+.link-class:hover {
+  color: #ff5c5c;
+  text-decoration: none;  
+}
+
+.testing {
+  width: "204px"; 
+  height: "136px"; 
+  overflow: "hidden";
+}
+
+.card-image {
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  align: center; 
+}
+
+.card-image:hover {
+  filter: none;
+  -webkit-filter: none;
+  align: center; 
+}
+
+.voting-buttons {
+  display: inline-block;
+}
+
+
+.fieldset {
+  width: 550px;
+  border: 1px solid #dcdcdc;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: right;
+}
+
+.legend {
+  background-color: #efefef;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+
+.submit-button {
+  border-radius: 5px;
+  width: 400px;
+  border: 1px solid; 
+}
+
+.submit-button:hover {
+  background-color: #ff5c5c;
+  color: #FFFFFF;  
+}
+
+.change-width {
+  width: 75%
+}

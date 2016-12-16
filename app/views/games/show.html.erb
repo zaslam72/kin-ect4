@@ -3,8 +3,24 @@
 
 
 <h2>Welcome to <%= @game.title %></h2>
-<img class="large-pic" src=<%= @game.image_url %>>
 
+<div class="voting-buttons">
+  <% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
+  <%= button_to '+1 vote', upvote_game_path(@game), method: :post %>
+  <% end %>
+</div>  |  
+<div class="voting-buttons">
+<%= pluralize(@game.votes.where(upvote: true).count - @game.votes.where(upvote: false).count, "vote") %>
+</div>  |  
+<div class="voting-buttons">
+  <% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
+  <%= button_to ' -1 vote', downvote_game_path(@game), method: :post %>
+  <% end %>
+</div>
+
+<br><br><br>
+<img class="large-pic img-circle" src=<%= @game.image_url %> ><br>
+<br><br>
 <p><b><label>Game Description:</label></b>
   <%= @game.body %>
   <p><b><label>Min Players:</label></b>
@@ -26,7 +42,7 @@
 <%= form_for([@game, Comment.new]) do |f| %>
   <div class="field">
     <%= f.text_area :body, size: "80x5" %>
-  </div>
+  </div
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -41,4 +57,4 @@
 
 <%= render partial: "games/player", collection: @players %>
 </div>
-<br>
+

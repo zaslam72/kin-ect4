@@ -1,7 +1,9 @@
-<%= form_tag login_path do %>
+<div class="fieldset legend center">
+  <%= form_tag login_path do %>
+    <center><h3>Log In</h3>
+    Email: <%= text_field_tag :email %>
+    Password: <%= password_field_tag :password %><br><br>
+    <%= submit_tag "submit", class: "submit-button" %></center>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+  <% end %>
+</div>

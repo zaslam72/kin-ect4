@@ -3,10 +3,8 @@ class GamesController < ApplicationController
   before_action :current_user
 
   def index
-    # @current_user = User.first
-
     @categories = Category.all
-    @games = Game.all[0..20]
+    @games = Game.all[0..75]
   end
 
   def show
@@ -15,6 +13,7 @@ class GamesController < ApplicationController
   end
 
   def search
+    p "*" * 100
     @categories = Category.all
     @games = Game.where(category_id: params[:category_id])
     render :index
@@ -23,12 +22,12 @@ class GamesController < ApplicationController
   def upvote
     @game = Game.find(params[:id])
     @game.votes.create(user_id: current_user.id, upvote: true)
-    redirect_to(games_path)
+    redirect_to(game_path)
   end
 
   def downvote
     @game = Game.find(params[:id])
     @game.votes.create(user_id: current_user.id, upvote: false)
-    redirect_to(games_path)
+    redirect_to(game_path)
   end
 end

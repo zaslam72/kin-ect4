@@ -14,43 +14,5 @@
  *= require_self
  */
 
-// @import "neat";
-//
-// body {
-//   @include outer-container;
-// }
-
-#error_explanation {
-  color: red;
-}
-
-.large-pic {
-  height: auto;
-  width: 50%;
-}
-
-h2 {
-  text-align: center;
-
-}
-
-.container {
-margin: 20px auto;
- width: 80%;
- padding: 20px 80px 20px 20px;
- border: 1px dotted black;
- font-family: "Courier New", Courier, monospace;
- // background-color: #FFF8DC ;
-}
-.navbar {
-    background-color: #FAF3D7;
-}
-
-.header {
-  text-align: center;
-
-}
-
-body {
-  background-color: #CCF1F9;
-}
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
