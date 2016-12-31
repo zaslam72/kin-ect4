@@ -1,5 +1,11 @@
 <div class="container">
 
+  <div class="center">
+      <%= image_tag("realkinectlogo.png", :alt => "(kin)ect4", height: '142', width: '460') %>
+  </div>
+
+<!--   <p> Oh my, oh my! It's Friday night, what game should I play? And who should I play with? These are tough questions that you shouldn't have to worry about. KinEct4 is here to help you decide which game you should play based off particular categories. You can also see what games your friends are playing and chat with them. </p> -->
+
   <div class="center search-bar dropdown">
     <%= form_tag("/search", method: "get") do %>
     <select name="category_id">
@@ -11,6 +17,11 @@
     <% end %>
   </div>
 
+
+  <% @categories.each do |category| %>
+    <%= button_to category.name, search_path(category.id), method: :get %>
+  <% end %>
+
   <div class="row">
 
     <%= render partial: 'game', collection: @games %>
@@ -18,4 +29,6 @@
   </div>
 
 </div>
+
+
 

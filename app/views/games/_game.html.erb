@@ -1,20 +1,14 @@
-<div class="col-md-4">
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src=<%= game.thumbnail_url %> class="img-thumbnail testing" >
+<div class="col-md-4 col-sm-6 col-xs-12 card text-xs-center">
+    <img src=<%= game.thumbnail_url %> class="img-thumbnail testing card-img-top" >
+    <div class="card-block">
+      <h4><%= link_to game.title, game_path(game), class: "link-class card-title" %></h4>
+        <% if current_user %>
+          <% if current_user.games.include?(game) %>
+            <%= button_to "+unsubscribe", user_game_subscription_path(current_user, game, game.subscriptions.where(game_id: game.id, user_id: current_user.id)), method: 'delete', action: :destroy, class: "btn btn-sm btn-primary" %>
+          <% else %>
+            <%= button_to "+subscribe", user_game_subscriptions_path(current_user, game, method: :post), class: "btn btn-sm btn-primary" %>
+          <% end %>
+        <% end %>
     </div>
-      <div class="card-stacked">
-        <div id="cards-content">
-          <h4 class="card-title"><%= link_to game.title, game_path(game), class: "link-class" %></h4>
-            <% if current_user %>
-              <% if current_user.games.include?(game) %>
-                <%= button_to "+unsubscribe", user_game_subscription_path(current_user, game, game.subscriptions.where(game_id: game.id, user_id: current_user.id)), method: 'delete', action: :destroy %>
-              <% else %>
-                <%= button_to "+subscribe", user_game_subscriptions_path(current_user, game, method: :post) %>
-              <% end %>
-            <% end %>
-            <br>
-        </div>
-      </div>
-  </div>
 </div>
+

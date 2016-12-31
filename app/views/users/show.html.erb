@@ -1,38 +1,46 @@
 <div class="container">
 
+	<div class="greeting">
+		<% if current_user != @user %>
+			<h2><%= @user.name.capitalize %>'s Profile</h2>
+		<% end %>
+	</div>
 
-	<% if current_user == @user %>
-	<h2>Welcome <%= @user.name.capitalize %>, here are your Games:</h2>
-	<% else %>
-	<h2><%= @user.name.capitalize %>'s Profile Page</h2>
-	<% end %>
-	<br>
-	<% if current_user == @user %>
-	<%= render 'add_games_button' %>
-	<% end %>
-	<br>
-	<br>
-	<%if current_user.friends.include?(@user) %>
-	<!-- Unfriend Button -->
+	<div class="friend-unfriend-button">
+		<%if current_user.friends.include?(@user) %>
+			<%= button_to "Unfriend", { action: "destroy", id: @user.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+		<% else %>
+			<% if current_user.id != @user.id %>
+				<%= button_to "Add Friend", action: "friendship" %>
+			<% end %>
+		<% end %>
+	</div>
 
-	<%= button_to "Unfriend", { action: "destroy", id: @user.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="row">
+	<div class="col-md-3">
+		<div class="friends-list">
+			<% if current_user == @user %>
+				<h3>friends list:</h3>
+			<% else %>
+				<h3><%= @user.name.downcase %>'s friends: </h3>
+			<% end %>
+				<ul><%= render partial: 'friend', collection: @friends %></ul>
+		</div>
+	</div>
 
-	<% else %>
-	<!-- Add Friend Button -->
-	<% if current_user.id == @user.id %>
-	<% else %>
-	<%= button_to "Add Friend", action: "friendship" %>
-	<% end %>
+	<div class="col-md-9">
+		<div class="games-list">
+				<% if current_user == @user %>
+					<h3> subscribed games: </h3>
+					<%= render 'add_games_button' %><br><br>
+				<% else %>
+					<h3><%= @user.name.downcase %>'s games:</h3>
+				<% end %>
+				<ul><%= render partial: 'games/game', collection: @games %></ul>
+		</div>
+	</div>
 
-	<% end %>
+</div>
 
-	<ul>
-		<%= render partial: 'games/game', collection: @games %>
-	</ul>
-
-	<h2>Friends!</h2>
-	<ul>
-		<%= render partial: 'friend', collection: @friends %>
-	</ul>
 
 </div>
