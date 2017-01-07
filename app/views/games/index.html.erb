@@ -1,4 +1,4 @@
-<div class="ui grid center aligned container">
+<div class="ui centered grid container">
 
   <div class="center">
       <%= image_tag("realkinectlogo.png", :alt => "(kin)ect4", height: '142', width: '460') %>
@@ -8,7 +8,7 @@
   <div class="row">
     <div class="center">
       <table class="categories">
-        <tr class="ce">
+        <tr>
         <% @categories.each do |category| %>
           <td>
           <%= button_to category.name, search_path(category), method: :get, class: "ui button categories" %>

@@ -1,71 +1,69 @@
 <!-- add players of each game here and restrict view if friend or not showing links -->
-<div class="container">
 
+<div class="ui container">
+  <h1><center><%= @game.title %></center></h1>
 
-<h2>Welcome to <%= @game.title %></h2>
+  <div class="ui two column grid">
+    <div class="row">
+      <div class="column">
+        <div class="game-description">
+          <h3 class="ui dividing header">Game Information</h3>
+          <div class="ui card">
+            <div class="image"><img class="ui medium image" src=<%= @game.image_url %>></div> 
 
-<div class="voting-buttons">
-  <% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
-  <%= button_to '+1 vote', upvote_game_path(@game), method: :post %>
-  <% end %>
-</div>  |  
-<div class="voting-buttons">
-<%= pluralize(@game.votes.where(upvote: true).count - @game.votes.where(upvote: false).count, "vote") %>
-</div>  |  
-<div class="voting-buttons">
-  <% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
-  <%= button_to ' -1 vote', downvote_game_path(@game), method: :post %>
-  <% end %>
-</div>
+            <div class="content">
+              <div class="meta">
+                <h3><b><center><%= pluralize(@game.votes.where(upvote: true).count - @game.votes.where(upvote: false).count, "vote") %></center></b></h3>
+                <center><% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
+                  <%= button_to '+1', upvote_game_path(@game), method: :post, class: "mini circular ui icon button" %>
+                <% end %></center>
+                <center><% if !@game.votes.pluck(:user_id).include?(current_user.id) %>
+                  <%= button_to '-1', downvote_game_path(@game), method: :post, class: "mini circular ui icon button" %>
+                <% end %></center>
+              </div>
+              <div class="description">
+                <p><b><label>Game Description:</label></b> <%= @game.body %></p>
+                <p><b><label>Min Players:</label></b> <%= @game.min_players %></p>
+                <p><b><label>Max Players:</label></b> <%= @game.max_players %></p>
+                <p><b><label>Playing Time:</label></b> <%= @game.playing_time %></p>
+              </div>
+            </div>
+            <div class="extra content">
+              <h3><i class="users icon"></i><b><label>Other Players:</label></b></h3>
+              <% if @players.length > 0 %>
+                <%= render partial: "games/player", collection: @players %>
+              <% else %>
+                <h4>There are no players for this game.</h4>
+              <% end %>
+            </div>
+          </div>
+          <%= render partial: "shared/errors" %>
+        </div>
+      </div>
 
-<br><br><br>
-<img class="ui large circular image" src=<%= @game.image_url %> ><br>
-<br><br>
-<p><b><label>Game Description:</label></b>
-  <%= @game.body %>
-  <p><b><label>Min Players:</label></b>
-  <%= @game.min_players %></p>
-  <p><b><label>Max Players:</label></b>
-  <%= @game.max_players %></p>
-  <p><b><label>Playing Time:</label></b>
-  <%= @game.playing_time %></p>
-</p>
-
-
-<%= render partial: "shared/errors" %>
-
-
-<!-- game comments here -->
-
-<% if @game.comments.length > 0 %>
-  <div class="ui comments">
-    <h3 class="ui dividing header">Comments</h3>
-    <%= render partial: "games/comment", collection: @game.comments %>
-  </div>
-<% end %>
-
-<!-- comment form here  -->
-
-<div class="ui stacked secondary segment loginform">
-  <%= form_for([@game, Comment.new]) do |f| %>
-    <div class="field">
-      <%= f.text_area :body, size: "80x5" %>
+      <div class="column">
+        <div class="game-comments">
+          <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <% if @game.comments.length > 0 %>
+              <%= render partial: "games/comment", collection: @game.comments %>
+            <% else %>
+              <h4>There are no comments for this game. Please submit a comment below.</h4>
+            <% end %>
+          </div>
+          <div class="ui stacked secondary segment loginform">
+            <%= form_for([@game, Comment.new]) do |f| %>
+              <div class="field"> <%= f.text_area :body %> </div>
+              <div class="actions"> <%= f.submit(class: "ui fluid button") %> </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit(class: "ui fluid button") %>
-    </div>
-  <% end %>
-</div>
-
-
-<!-- players partial here -->
-
-  <div>
-  <h3>
-    Other Players:
-  </h3>
-
-  <%= render partial: "games/player", collection: @players %>
   </div>
 </div>
+
+
+
+
 
