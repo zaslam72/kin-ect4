@@ -1,8 +1,24 @@
-<p>
-  <%= comment.body %>
-  <%= button_to '+1', upvote_comment_path(comment), method: :post %>
-  <%= pluralize(comment.votes.where(upvote: true).count - comment.votes.where(upvote: false).count, "vote") %>
-  <%= button_to '-1', downvote_comment_path(comment), method: :post %>
-  <%= link_to 'Edit', edit_comment_path(comment) %>
-  <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="comment">
+  <div class="content">
+      <div class="avatar">
+        <%= button_to '+1', upvote_comment_path(comment), method: :post, class: "mini circular ui icon button" %>
+        <%= button_to '-1', downvote_comment_path(comment), method: :post, class: "mini circular ui icon button" %>
+      </div>
+    <%= link_to comment.user.name, user_path(comment.user.id), class: "author" %>
+      <div class="metadata">
+        <div class="rating">
+          <i class="star icon"></i>
+            <%= pluralize(comment.votes.where(upvote: true).count - comment.votes.where(upvote: false).count, "vote") %>
+        </div>
+      </div>
+    <div class="text">
+    <%= comment.body %>
+    <div class="actions">
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    </div>
+  </div>
+</div>
+
+

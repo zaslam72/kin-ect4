@@ -19,7 +19,7 @@
 </div>
 
 <br><br><br>
-<img class="large-pic img-circle" src=<%= @game.image_url %> ><br>
+<img class="ui large circular image" src=<%= @game.image_url %> ><br>
 <br><br>
 <p><b><label>Game Description:</label></b>
   <%= @game.body %>
@@ -31,30 +31,41 @@
   <%= @game.playing_time %></p>
 </p>
 
-<b><label>Game Comments:</label></b>
 
 <%= render partial: "shared/errors" %>
 
-<% if @game.comments.length > 0 %>
-<%= render partial: "games/comment", collection: @game.comments %>
-<% end %>
 
-<%= form_for([@game, Comment.new]) do |f| %>
-  <div class="field">
-    <%= f.text_area :body, size: "80x5" %>
-  </div
-  <div class="actions">
-    <%= f.submit %>
+<!-- game comments here -->
+
+<% if @game.comments.length > 0 %>
+  <div class="ui comments">
+    <h3 class="ui dividing header">Comments</h3>
+    <%= render partial: "games/comment", collection: @game.comments %>
   </div>
 <% end %>
 
+<!-- comment form here  -->
+
+<div class="ui stacked secondary segment loginform">
+  <%= form_for([@game, Comment.new]) do |f| %>
+    <div class="field">
+      <%= f.text_area :body, size: "80x5" %>
+    </div>
+    <div class="actions">
+      <%= f.submit(class: "ui fluid button") %>
+    </div>
+  <% end %>
+</div>
+
+
 <!-- players partial here -->
-<br>
 
-<h3>
-  Other Players:
-</h3>
+  <div>
+  <h3>
+    Other Players:
+  </h3>
 
-<%= render partial: "games/player", collection: @players %>
+  <%= render partial: "games/player", collection: @players %>
+  </div>
 </div>
 

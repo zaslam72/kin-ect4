@@ -1,17 +1,39 @@
-<div class="fieldset legend center">
-  <div id="change-width">
-  <%= form_for :user, url: users_path, class: "change-width" do |f| %>
-    <center><h3>Sign Up</h3>
-    Name: <br>
-    <%= f.text_field :name, style: "width:400px" %><br>
-    Email: <br>
-    <%= f.text_field :email, style: "width:400px" %><br>
-    Password: <br>
-    <%= f.password_field :password, style: "width:400px" %> <br>
-    Confirm Password:  <br>
-    <%= f.password_field :password_confirmation, style: "width:400px" %><br><br>
-    <%= f.submit "submit", class: "submit-button" %></center>
-
-  <% end %>
+<div class="ui middle aligned center loginform">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Sign Up
+      </div>
+    </h2>
+    <%= form_for :user, url: users_path, class: "ui large form" do |f| %>
+      <div class="ui stacked secondary segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+              <%= f.text_field :name, placeholder: "Name" %><br>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail outline icon"></i>
+              <%= f.text_field :email, placeholder: "E-mail Address" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+              <%= f.password_field :password, placeholder: "Password" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+              <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+          </div>
+        </div>
+          <%= f.submit "Submit", class: "ui fluid large button" %>
+      </div>
+    <% end %>
+    <div class="ui message"> Already a member? <%= link_to "Log In", login_path %></div>
   </div>
 </div>

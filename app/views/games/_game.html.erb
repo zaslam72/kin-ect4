@@ -1,14 +1,17 @@
-<div class="col-md-4 col-sm-6 col-xs-12 card text-xs-center">
-    <img src=<%= game.thumbnail_url %> class="img-thumbnail testing card-img-top" >
-    <div class="card-block">
+<div class="ui grid center aligned card">
+  <div class="column">
+    <div class="image">
+      <img src=<%= game.thumbnail_url %> class="img-thumbnail testing card-img-top" >
+    </div>
+    <div class="content">
       <h4><%= link_to game.title, game_path(game), class: "link-class card-title" %></h4>
         <% if current_user %>
           <% if current_user.games.include?(game) %>
-            <%= button_to "+unsubscribe", user_game_subscription_path(current_user, game, game.subscriptions.where(game_id: game.id, user_id: current_user.id)), method: 'delete', action: :destroy, class: "btn btn-sm btn-primary" %>
+            <%= button_to "+unsubscribe", user_game_subscription_path(current_user, game, game.subscriptions.where(game_id: game.id, user_id: current_user.id)), method: 'delete', action: :destroy, class: "ui button" %>
           <% else %>
-            <%= button_to "+subscribe", user_game_subscriptions_path(current_user, game, method: :post), class: "btn btn-sm btn-primary" %>
+            <%= button_to "+subscribe", user_game_subscriptions_path(current_user, game, method: :post), class: "ui button" %>
           <% end %>
         <% end %>
     </div>
+  </div>
 </div>
-
