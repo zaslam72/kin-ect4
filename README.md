@@ -4,8 +4,6 @@
     password: zara
 
 ![alt text](https://github.com/zaslam72/kin-ect4/blob/master/app/assets/images/k4-readme-pics.png)
-![alt text](https://github.com/zaslam72/kin-ect4/blob/master/app/assets/images/k4-homepage-login.png)
-![alt text](https://github.com/zaslam72/kin-ect4/blob/master/app/assets/images/k4-gamepage.png)
 
 ### Main Features
 1. Search by category through a collection of board games
