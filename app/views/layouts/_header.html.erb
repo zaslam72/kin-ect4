@@ -1,6 +1,6 @@
 <% if current_user %>
   <%= link_to "Home", games_path, class: "item" %>
-  <%= link_to "Profile Page", user_path(current_user), class: "item" %>
+  <%= link_to "Your Profile", user_path(current_user), class: "item" %>
   <%= link_to "Logout", '/logout', class: "item right menu" %>
 <% else %>
   <%= link_to "Home", games_path, class: "item" %>
