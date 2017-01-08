@@ -5,7 +5,7 @@
         <%= button_to '+1', upvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
         <%= button_to '-1', downvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
       </div>
-      <%= link_to comment.user.name, user_path(comment.user.id), class: "author" %>
+      <%= link_to comment.user.name.capitalize, user_path(comment.user.id), class: "author" %>
       <div class="metadata">
         <div class="rating">
           <i class="yellow star icon"></i>
