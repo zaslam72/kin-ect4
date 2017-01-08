@@ -4,6 +4,7 @@ header
 -	[x] login
 -	[x] signup
 -	[x] all games link
+- [x] logout
 
 'games#index'
 =============
@@ -24,9 +25,9 @@ header
 'users#show'
 ============
 
--	[x] all games partial w/comments partial showing
+-	[x] all games partial
 -	[x] all friends partial
--	[x] button_to root
+-	[x] button_to root (in nav bar)
 
 **if not friends restrict view of games and friends**
 
@@ -45,6 +46,3 @@ header
 
 -	[x] all games partial
 -	[x] search games
-
-'users#show'
-============

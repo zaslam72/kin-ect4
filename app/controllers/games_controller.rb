@@ -13,8 +13,6 @@ class GamesController < ApplicationController
   end
 
   def search
-    p "*" * 100
-    p params
     @categories = Category.all
     @games = Game.where(category_id: params[:format])
     render :index

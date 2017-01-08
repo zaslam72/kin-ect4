@@ -1,11 +1,11 @@
 <div class="comment">
-<div class="ui segment">
-  <div class="content">
+  <div class="ui segment">
+    <div class="content">
       <div class="avatar">
         <%= button_to '+1', upvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
         <%= button_to '-1', downvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
       </div>
-    <%= link_to comment.user.name, user_path(comment.user.id), class: "author" %>
+      <%= link_to comment.user.name, user_path(comment.user.id), class: "author" %>
       <div class="metadata">
         <div class="rating">
           <i class="yellow star icon"></i>
@@ -13,13 +13,13 @@
         </div>
       </div>
     <div class="text">
-    <%= comment.body %>
-    <div class="actions">
-      <%= link_to 'Edit', edit_comment_path(comment) %>
-      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= comment.body %>
+      <div class="actions">
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
     </div>
-  </div>
   </div>
 </div>
 

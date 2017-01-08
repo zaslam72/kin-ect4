@@ -1,11 +1,10 @@
-
-  <% if current_user %>
-    <%= link_to "Home", games_path, class: "item" %>
-    <%= link_to "Profile Page", user_path(current_user), class: "item" %>
-    <%= link_to "Logout", '/logout', class: "item right menu" %>
-  <% else %>
-    <%= link_to "Home", games_path, class: "item" %>
-    <%= link_to 'Login', '/login', class: "item" %>
-    <%= link_to 'Signup', '/signup', class: "item" %>
-  <% end %>
+<% if current_user %>
+  <%= link_to "Home", games_path, class: "item" %>
+  <%= link_to "Profile Page", user_path(current_user), class: "item" %>
+  <%= link_to "Logout", '/logout', class: "item right menu" %>
+<% else %>
+  <%= link_to "Home", games_path, class: "item" %>
+  <%= link_to 'Login', '/login', class: "item" %>
+  <%= link_to 'Signup', '/signup', class: "item" %>
+<% end %>
 
