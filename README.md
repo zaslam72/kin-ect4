@@ -1,24 +1,15 @@
-# README
+# KinEct4
+[KinEct4](https://kinect-4.herokuapp.com) is a web application that allows users to find a board game that fits their current mood.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Team Members
+1. [Alexis Carroll](https://github.com/lexac1)
+2. [Long Tran](https://github.com/LongTran415)
+3. [Kelvin Lightner](https://github.com/KelvinLightner)
+4. [Zara Aslam](https://github.com/zaslam72)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Main Features
+1. Search by category through a collection of board games
+2. Add board games to your personal collection
+3. Connect with friends and see what they're playing
+4. Post comments related to board games
