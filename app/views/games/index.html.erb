@@ -1,33 +1,33 @@
-<div class="ui centered grid container">
-
-  <div class="center">
-      <%= image_tag("realkinectlogo.png", :alt => "(kin)ect4", height: '142', width: '460') %>
-
-  </div>
-
-  <div class="row">
-    <div class="center">
-      <table class="categories">
-        <tr>
-        <% @categories.each do |category| %>
-          <td>
-          <%= button_to category.name, search_path(category), method: :get, class: "ui button categories" %>
-          </td>
-        <% end %>
-        </tr>
-      </table>
+<div class="ui container">
+  <div class="ui segments">
+    <div class="ui segment">
+      <div class="center">
+        <center><%= image_tag("kinect4logonew.png", :alt => "(kin)ect4", height: '100', width: '460') %></center>
+      </div>
+    </div>
+    <div class="ui segments">
+    <div class="ui segment">
+      <div class="row">
+        <center>
+          <table class="categories">
+            <tr>
+              <% @categories.each do |category| %>
+                <td>
+                  <%= button_to category.name, search_path(category), method: :get, class: "ui orange small button categories" %>
+                </td>
+              <% end %>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+    </div>
+    <div class="ui segments">
+    <div class="ui segment">
+      <center><div class="ui cards">
+        <%= render partial: 'game', collection: @games %>
+      </div></center>
+    </div>
     </div>
   </div>
-
-  <br><br>
-
-
-  <div class="ui cards">
-    <%= render partial: 'game', collection: @games %>
-  </div>
-
-
 </div>
-
-
-

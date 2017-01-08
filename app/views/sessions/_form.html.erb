@@ -1,27 +1,31 @@
-<div class="ui middle aligned center loginform">
-  <div class="column">
-    <h2 class="ui image header">
-      <div class="content">
-        Log In
-      </div>
-    </h2>
-    <%= form_tag login_path, class: "ui large form" do %>
-      <div class="ui stacked secondary segment">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="mail outline icon"></i>
-              <%= text_field_tag :email, nil, placeholder: "Email Address" %>
+<div class="ui container">
+  <div class="ui segments">
+    <div class="ui segment">
+      <h2>
+        <center>Log In</center>
+      </h2>
+      <%= form_tag login_path, class: "ui large form" do %>
+        <div class="ui secondary segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="mail outline orange icon"></i>
+                <%= text_field_tag :email, nil, placeholder: "Email Address" %>
+            </div>
           </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-              <%= password_field_tag :password, nil, placeholder: "Password" %>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock orange icon"></i>
+                <%= password_field_tag :password, nil, placeholder: "Password" %>
+            </div>
           </div>
+            <%= submit_tag "Submit", class: "ui yellow fluid large button" %>
         </div>
-          <%= submit_tag "Submit", class: "ui fluid large button" %>
+      <% end %>
+      <div class="ui segments">
+        <div class="ui secondary segment"> 
+          <center>New to us? <%= link_to "Register", signup_path, class: "link" %></center>
+        </div>
       </div>
-    <% end %>
-    <div class="ui message"> New to us? <%= link_to "Register", signup_path %></div>
+    </div>
   </div>
 </div>

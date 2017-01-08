@@ -1,8 +1,30 @@
 .loginform {
   width: 50%;
-  margin: auto;  
 }
 
-.game-description {
-  min-width: 70%
+.link-hover {
+  font-color: teal; 
 }
+
+
+.link {
+  color: #515151;
+}
+
+.link:hover {
+  color: #008080; 
+  text-decoration: none;  
+}
+
+.add-new-games-link {
+  color: #FFFFFF; 
+}
+
+.add-new-games-link:hover {
+  color: #FFFFFF; 
+}
+
+.players-link:hover {
+  color: #00B5AD; 
+  text-decoration: none; 
+} 

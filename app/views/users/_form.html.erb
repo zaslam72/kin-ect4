@@ -1,39 +1,41 @@
-<div class="ui middle aligned center loginform">
-  <div class="column">
-    <h2 class="ui image header">
-      <div class="content">
-        Sign Up
-      </div>
-    </h2>
-    <%= form_for :user, url: users_path, class: "ui large form" do |f| %>
-      <div class="ui stacked secondary segment">
+<div class="ui container">
+  <div class="ui segments">
+    <div class="ui segment">
+      <h2><center>Sign Up</center></h2>
+      <%= form_for :user, url: users_path, class: "ui large form" do |f| %>
+      <div class="ui secondary segment">
         <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-              <%= f.text_field :name, placeholder: "Name" %><br>
+          <div class="ui left icon fluid input">
+            <i class="user orange icon"></i>
+              <%= f.text_field :name, placeholder: "Name" %>
           </div>
-        </div>
+        </div><br>
         <div class="field">
-          <div class="ui left icon input">
-            <i class="mail outline icon"></i>
-              <%= f.text_field :email, placeholder: "E-mail Address" %>
+          <div class="ui left icon fluid input">
+            <i class="mail orange outline icon"></i>
+              <%= f.text_field :email, placeholder: "E-mail Address" %><br>
           </div>
-        </div>
+        </div><br>
         <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
+          <div class="ui left icon fluid input">
+            <i class="lock orange icon"></i>
               <%= f.password_field :password, placeholder: "Password" %>
           </div>
-        </div>
+        </div><br>
         <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
+          <div class="ui left icon fluid input">
+            <i class="lock orange icon"></i>
               <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
           </div>
-        </div>
-          <%= f.submit "Submit", class: "ui fluid large button" %>
+        </div><br>
+          <%= f.submit "Submit", class: "ui fluid yellow large button" %>
       </div>
     <% end %>
-    <div class="ui message"> Already a member? <%= link_to "Log In", login_path %></div>
+    <div class="ui segments">
+      <div class="ui secondary segment">
+      <center>Already a member? <%=link_to "Log In", login_path, class: "link" %></center>
+      </div>
+    </div>
+    </div>
   </div>
 </div>

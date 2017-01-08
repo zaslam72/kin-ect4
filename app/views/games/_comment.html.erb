@@ -1,13 +1,14 @@
 <div class="comment">
+<div class="ui segment">
   <div class="content">
       <div class="avatar">
-        <%= button_to '+1', upvote_comment_path(comment), method: :post, class: "mini circular ui icon button" %>
-        <%= button_to '-1', downvote_comment_path(comment), method: :post, class: "mini circular ui icon button" %>
+        <%= button_to '+1', upvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
+        <%= button_to '-1', downvote_comment_path(comment), method: :post, class: "mini circular ui yellow icon button" %>
       </div>
     <%= link_to comment.user.name, user_path(comment.user.id), class: "author" %>
       <div class="metadata">
         <div class="rating">
-          <i class="star icon"></i>
+          <i class="yellow star icon"></i>
             <%= pluralize(comment.votes.where(upvote: true).count - comment.votes.where(upvote: false).count, "vote") %>
         </div>
       </div>
@@ -18,6 +19,7 @@
       <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     </div>
+  </div>
   </div>
 </div>
 

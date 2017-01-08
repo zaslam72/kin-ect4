@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>(kin)ect4</title>
+	<title>KinEct4</title>
 	<%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-<nav class="ui secondary pointing menu">
+<nav class="ui secondary top fixed teal inverted pointing menu">
 	<%= render 'layouts/header' %>
-</nav>
+</nav><br><br><br>
 	<%= yield %>
 </body>
 </html>

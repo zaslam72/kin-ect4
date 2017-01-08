@@ -1,8 +1,23 @@
-<%= form_for([@game, @comment]) do |f| %>
-  <div class="field">
-    <%= f.text_area :body, size: "50x5" %>
+<div class="ui container">
+  <div class="ui segments">
+    <div class="ui segment">
+      <h2><center>Edit Comment</center></h2>
+      <div class="ui segments">
+        <div class="ui secondary segment">
+        <%= form_for([@game, @comment]) do |f| %>
+          <div class="field">
+            <%= f.text_area :body, size: "156x3" %>
+          </div>
+          <div class="actions">
+            <%= f.submit(class: "ui small yellow fluid button") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+
+
+
+
+
