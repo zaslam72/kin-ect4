@@ -8,8 +8,9 @@
 ### Main Features
 1. Search by category through a collection of board games
 2. Add board games to your personal collection
-3. Connect with friends and see what they're playing
-4. Post comments related to board games
+3. Vote for your favorite board games
+4. Connect with friends and see what they're playing
+5. Post comments related to board games
 
 ### Tech Stack
 1. Framework: Ruby on Rails
