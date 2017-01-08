@@ -1,5 +1,6 @@
 # KinEct4
-KinEct4 is a web application that allows users to find a board game that fits their current mood.
+[KinEct4](https://kinect-4.herokuapp.com) is a web application that allows users to find a board game that fits their current mood.
+
 
 ### Team Members
 1. [Alexis Carroll](https://github.com/lexac1)
