@@ -13,11 +13,11 @@ Have you ever wanted to play a board game but didn't know which one? Well, worry
 5. Post comments related to board games
 
 ### Tech Stack
-1. Framework: Ruby on Rails
-2. Front-End: Semantic UI 
-3. Database: PostgreSQL
-4. Deployment: Heroku
-5. Version Control: Git 
+1. **Framework:** Ruby on Rails
+2. **Front-End:** Semantic UI 
+3. **Database:** PostgreSQL
+4. **Deployment:** Heroku
+5. **Version Control:** Git 
 
 ### Team Members
 1. [Alexis Carroll](https://github.com/lexac1)
