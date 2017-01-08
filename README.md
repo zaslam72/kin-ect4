@@ -1,24 +1,11 @@
 # KinEct4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Team Members
+----------------
+1. Alexis Carroll
+2. Long Tran
+3. Kelvin Lightner
+4. Zara Aslam 
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
