@@ -1,6 +1,5 @@
 # KinEct4
-[KinEct4](https://kinect-4.herokuapp.com) is a web application that allows users to find a board game that fits their current mood.<br> If you're eager to check out the functionality but don't want to make your own account, <br>feel free to use the following: <br><br>
-
+[KinEct4](https://kinect-4.herokuapp.com) is a web application that allows users to find a board game that fits their current mood.<br> If you're eager to check out the functionality but don't want to make your own account, feel free to *use the following*: <br><br>
     **email:** zara@zara<br>
     **password:** zara
 
