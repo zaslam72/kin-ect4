@@ -1,5 +1,4 @@
 <% if current_user %>
-<<<<<<< HEAD
   <%= link_to "Home", games_path, class: "item" %>
   <%= link_to "Your Profile", user_path(current_user), class: "item" %>
   <%= link_to "Logout", '/logout', class: "item right menu" %>
@@ -8,10 +7,3 @@
   <%= link_to 'Login', '/login', class: "item" %>
   <%= link_to 'Signup', '/signup', class: "item" %>
 <% end %>
-
-=======
-<%= link_to "Home", games_path %> | <%= link_to "Profile Page", user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-<%= link_to "Home", games_path %> | <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
->>>>>>> LongTran415/master

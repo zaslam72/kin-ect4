@@ -3,19 +3,22 @@
 <head>
 	<title>KinEct4</title>
 	<%= csrf_meta_tags %>
-<<<<<<< HEAD
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-=======
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
->>>>>>> LongTran415/master
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 <nav class="ui secondary top fixed teal inverted pointing menu">
 	<%= render 'layouts/header' %>
-</nav><br><br><br>
+</nav><br><br>
+<% if !current_user %>
+<div class="sign-up-flag">
+	<p>
+		* To add games to collection please <a href="login">login</a> or <a href="/signup">register.</a> *
+	</p>
+</div>
+<br>
+<% end %>
 	<%= yield %>
 </body>
 </html>
-
