@@ -3,7 +3,7 @@ Have you ever wanted to play a board game but didn't know which one? Well, worry
 - **email:** zara@zara<br>
 - **password:** zara
 
-![alt text](https://github.com/zaslam72/kin-ect4/blob/master/app/assets/images/k4-readme-pics.png)
+![alt text](https://github.com/zaslam72/kin-ect4/blob/master/screenshot-readme.png)
 
 ### Main Features
 1. Search by category through a collection of board games
